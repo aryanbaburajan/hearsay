@@ -1,0 +1,40 @@
+@import "./editor.css";
+
+.characters-page {
+  min-width: 620px;
+  min-height: 100%;
+  margin: 0;
+  color: #ffe45c;
+  background: #050505;
+  font: 14px Arial, Helvetica, sans-serif;
+}
+
+.characters-main {
+  width: min(840px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 64px 0 96px;
+}
+
+.characters-intro { margin-bottom: 36px; }
+.characters-intro h1 { margin: 6px 0 12px; color: #fff3a0; font-size: 32px; font-weight: 500; }
+.characters-intro p { max-width: 620px; margin-bottom: 0; color: #b8aa55; font-size: 16px; line-height: 1.55; }
+.characters-intro .eyebrow { color: #ffe100; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+
+.character-list { display: grid; gap: 12px; }
+.character-card {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid #4a4300;
+  border-radius: 12px;
+  background: #0c0c08;
+}
+.character-card:focus-within { border-color: #ffe100; }
+.character-index { align-self: center; color: #746900; font: 18px "Roboto Mono", monospace; }
+.character-name { display: grid; gap: 7px; }
+.character-name span { color: #b8aa55; font-size: 12px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; }
+.character-name input { font-size: 17px; }
+.delete-character:disabled { cursor: not-allowed; opacity: .35; }
+.character-undo { right: 22px; }

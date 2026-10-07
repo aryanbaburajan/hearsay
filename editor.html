@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Story editor — Hearsay</title>
+  </head>
+  <body class="editor-page">
+    <header class="graph-toolbar">
+      <div class="brand"><span class="brand-mark">H</span><strong>Story editor</strong></div>
+      <div class="toolbar-actions">
+        <span id="save-status" aria-live="polite">Saved</span>
+        <button id="add-node" class="primary" type="button">＋ New scene</button>
+        <a class="button" href="/characters.html">Characters</a>
+        <button id="fit-view" type="button">Fit view</button>
+        <button id="reset-tree" class="danger" type="button">Reset</button>
+        <a class="button" href="/">▶ Preview</a>
+      </div>
+    </header>
+
+    <main class="graph-layout">
+      <section id="graph-viewport" class="graph-viewport" aria-label="Dialogue node graph">
+        <div id="selection-box" class="selection-box" hidden></div>
+        <div id="graph-world" class="graph-world">
+          <svg id="edge-layer" class="edge-layer" aria-hidden="true">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z"></path>
+              </marker>
+            </defs>
+            <g id="edges"></g>
+          </svg>
+          <div id="node-layer" class="node-layer"></div>
+        </div>
+        <div class="canvas-help">Drag to pan · Shift-drag to select · Right-click empty space to create · Right-click a node to delete</div>
+      </section>
+
+      <aside id="inspector" class="inspector" hidden></aside>
+    </main>
+
+    <div id="undo-toast" class="undo-toast" role="status" aria-live="polite" hidden>
+      <span>Scene deleted</span>
+      <button id="undo-delete" type="button">Undo</button>
+    </div>
+
+    <script type="module" src="/src/editor.js"></script>
+  </body>
+</html>

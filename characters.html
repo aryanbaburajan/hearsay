@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090909" />
+    <title>Characters — Hearsay</title>
+  </head>
+  <body class="characters-page">
+    <header class="graph-toolbar">
+      <div class="brand"><span class="brand-mark">H</span><strong>Characters</strong></div>
+      <div class="toolbar-actions">
+        <span id="save-status" aria-live="polite">Saved</span>
+        <button id="add-character" class="primary" type="button">＋ New character</button>
+        <a class="button" href="/editor.html">Back to story</a>
+        <a class="button" href="/">▶ Preview</a>
+      </div>
+    </header>
+
+    <main class="characters-main">
+      <header class="characters-intro">
+        <p class="eyebrow">Cast</p>
+        <h1>Who appears in this trial?</h1>
+        <p>Create the names you want to use. They will appear in every scene’s Speaker dropdown.</p>
+      </header>
+      <section id="character-list" class="character-list" aria-label="Story characters"></section>
+    </main>
+
+    <div id="undo-toast" class="undo-toast character-undo" role="status" aria-live="polite" hidden>
+      <span>Character deleted</span>
+      <button id="undo-delete" type="button">Undo</button>
+    </div>
+
+    <script type="module" src="/src/characters.js"></script>
+  </body>
+</html>
